@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cek Khodam Ngawi</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Quicksand:wght@300..700&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <h1>Cek Khodam Ngawi</h1>
+        <p>Cek khodam yang ada di dalam diri kamu</p>
+        <input type="text" id="name-input" placeholder="Tulis nama lo">
+        <button onclick="checkKhodam()">CHECK</button>
+        <h2 class="hasil" id="hasil"></h2>
+        <p>© Afgan Irwansyah Hidayat</p>
+        <a href="https://github.com/Afganirwansyahhidayat" class="link">My Github</a>
+    </div>
+    <!-- Javascripy -->
+     <script>
+         function checkKhodam() {
+            const nameInput = document.getElementById('name-input').value.trim();
+            const resultElement = document.getElementById('hasil');
+            const name = document.getElementById('name-input')
+
+            if (nameInput === "") {
+                resultElement.textContent = "Harap masukkan nama terlebih dahulu!";
+                return;
+            }
+
+            const khodamList = [
+            "Anggrek Mekar Pontianak",
+            "Kapal Karam",
+            "Bumbu Kacang Khas Kebumen",
+            "Lumpur Lapindo Blukutuk-blukutuk",
+            "Puding Pak Hambali",
+            "Agar-agar Mas Rehan Usluk-usluk",
+            "Agar-agar Khas Grobongan",
+            "Kereta Argo Ngawi Ges Gejes",
+            "Steak Wagyu Impor Aseli Tiongkok",
+            "Lato Lato Khas Mojokerto",
+            "Kapal Kargo Banyuwangi",
+            "Buah Khuldi Asli Samarinda",
+            "Piscok Lumer Asli Probolinggo",
+            "Bandung Lautan Api",
+            "Rudal Jawa Siap Hantam Israel",
+            "Yanto Pasuruan Gempa Bumi",
+            "Gendang Klutuk Sunda Taktuktaktuk",
+            "Fuad 12 Nyapu Di Kebun Raya Bogor",
+            "Tanah Longsor Himalaya",
+            "Hollad Bakery Cabang Grobongan",
+            "Gelombang Tsunami India",
+            "Kuda Lumping Aseli Ponorogo",
+            "Laba-laba Sunda",
+            "Laba-laba Jawa",
+            "Nasi Cumi Hitam Bertelor Aseli Madura",
+            "Badai Topan Selat Karimata",
+            "Waspada Virus Zombie Minang Sudah Menyebar Di Mana Mana Jika Bertemu Hati-hati Rek",
+            "Rambutan Khas Ponorogo",
+            "Buah Salak Aseli Ngawi",
+            "Banjarmasin Slowmo",
+            "Jamur Enoki Khas Palangkaraya Enak Banget Rek",
+            "Tertangkap Kamera Zombie Bandung",
+            "Hantu Banyu Aseli Palembang",
+            "Hotwil Aseli Blora",
+            "Buah Palah Aseli Grobongan",
+            "Anomali Samarinda",
+            "Mister Abdul Konglomerat Jawa",
+            "Ryan Parmadi Dancer Pekalongan",
+            "Klinik Syaraf Banyuwangi",
+            "Lumba-lumba Selat Sunda",
+            "Dadang Resing Jagoan Sirkuit Sentul",
+            "Gelombang Laut Pantai Ancol",
+            "Riko Racing Mandalika",
+            "Roti O Lempuyangan",
+            "Windah Aspal Tol Cipularang",
+            "Waspada Hibernasi Zombie Gunung Bromo",
+            "Upin Ipin Aseli Cilacap",
+            "Donat Hitam Khas Purwokerto",
+            "Penampakan Tuyul Ngawi Hati-hati Buat Daerah Jakarta Barat",
+            "Mie Kuah Kental Khas Wonosobo",
+            "Sapi Limosin Khas Jawa",
+            "Brio Mas Cahyo 736 Braktaktaktak",
+            "Latihan Renang Gaya Kupu-kupu",
+            "Blezing Duet From Skylar",
+            "Asep Otomotif",
+            "Martabak 100% Halal",
+            "Lintang Latihan Bersepeda Otw Racing Mandalika",
+            "Geger Zombie Ciamis Tertangkap Kamera",
+            "Fuad Racing Mandalika",
+            "Tertangkap Kamera Zombie Makassar",
+            "Kita Jakarta",
+            "Pulau Samosir",
+            "Lato Lato Jawa VS Jawir Taktuktaktuk",
+            "Mesin Capit Bojong Gede",
+            "Jangan Sampai Persahabatan Kita Hancur Cuma Karena Burger King Medan",
+            "Balap Kerbau Pamekasan",
+            "Sabung Ayam Banjarmasin",
+            "Risol Ayam Boyolali",
+            "Rizki 06 Review Ceker Mercon Khas Ngawi",
+            "Tertangkap Kamera Zombie Wilif Wilof Wilai Makassar",
+            "Monster Laut Depok",
+            "Rusdi Kewer Kewer",
+            "Pop Mie",
+            "Ambatukam Kemasukan Jin",
+            "Kelompok Si Imut",
+            "Ricardo Milos",
+            "Rehan Wangsaf",
+            "Farhan Kebab",
+            "Icikiwir",
+            "Ambatukan",
+            "Rusdi",
+            "Faiz",
+            "Fuad",
+            "Ambalingham",
+            "Lil Nus Nus",
+            "Si Imoet",
+            "Si Muanis",
+            "Ambasing",
+            "Siwit Tukam",
+            "Mancing Perkoro",
+            "Ayam Boiler Khas Grobongan",
+            "Mie Kuah Kental Khas Wonosobo",
+            "Hati-hati Kebocoran Data",
+            "Unjuk Rasa Pegawai Gula Aren Grobongan",
+            "Dimas Parangtritis Dewa Voli",
+            "Kereta Argo Parahyangan",
+            "Buaya Hitam Endemik Sungai Brantas",
+            "Ikan Chana Mas Edi Ngamuk",
+            "Haris Unboxing Robot Asal Purworejo",
+            "Musang Jawa",
+            "Angin Ribut",
+            "Kecap"
+        ];
+
+        function hapusotomatis () {
+            const name = document.getElementById('name-input').value = ""
+        }
+        // output array
+            const randomIndex = Math.floor(Math.random() * khodamList.length);
+            const khodam = khodamList[randomIndex];
+            hapusotomatis ();
+            resultElement.textContent = `${khodam}`;
+        }
+     </script>
+</body>
+</html>
